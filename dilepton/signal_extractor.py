@@ -51,7 +51,8 @@ def get_R_factor(h1m_ULSnp_mix, h1m_ULSpn_mix, h1m_lspp_mix, h1m_lsmm_mix):
         if uls > 1e-6:
             if lspp * lsmm > 1e-6 :
                 R = uls / ( 2 * TMath.Sqrt( lspp*lsmm ) );
-                R_err = TMath.Sqrt( ( pow(lspp*lsmm_err*uls,2) + pow(lspp_err*lsmm*uls,2) + 4*pow(lspp*lsmm*uls_err,2) ) / ( 16 * pow(lspp*lsmm,3) ) );
+                #R_err = TMath.Sqrt( ( pow(lspp*lsmm_err*uls,2) + pow(lspp_err*lsmm*uls,2) + 4*pow(lspp*lsmm*uls_err,2) ) / ( 16 * pow(lspp*lsmm,3) ) );
+                R_err = abs(R) * math.sqrt(math.pow(lspp_err/lspp/2, 2) + math.pow(lsmm_err/lsmm/2, 2) + math.pow(uls_err/uls, 2));
             elif lspp + lsmm > 1e-6 :
                 R = uls / ( 2 * 0.5 * (lspp + lsmm) );
                 R_err = TMath.Sqrt( (pow(uls*lspp_err,2) + pow(uls*lsmm_err,2) + pow(lspp+lsmm,2)*pow(uls_err,2) ) / pow(lspp+lsmm,4) );

@@ -1,7 +1,8 @@
 import ROOT
 from ROOT import TH1D, TH2D, TH3D, TGraph, TGraphErrors, TGraphAsymmErrors
 from ROOT import gROOT, gSystem, gStyle, gPad
-from ROOT import kWhite, kBlack, kRed, kGreen, kBlue, kYellow, kOrange
+from ROOT import kWhite, kBlack, kRed, kGreen, kBlue, kYellow, kOrange, kMagenta, kCyan
+from ROOT import kFullCircle, kFullSquare, kFullTriangleUp, kFullTriangleDown, kOpenCircle, kOpenSquare, kOpenTriangleUp, kOpenDiamond, kOpenCross, kFullStar, kOpenStar, kOpenTriangleDown, kFullDiamond, kFullCross
 
 def make_common_style(g1, marker, size, color, width=2, fill=0):
     g1.SetMarkerStyle(marker);

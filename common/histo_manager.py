@@ -1,7 +1,7 @@
 import numpy as np
 import math
 import ROOT
-from ROOT import TH1D, TH2D, TH3D, TMath, TH1F TProfile
+from ROOT import TH1D, TH2D, TH3D, TMath, TH1F, TProfile
 
 #______________________________________________________________________
 def convert_dn2n(h1org):
@@ -54,7 +54,7 @@ def rebin_histogram(h1, arrX, isdiff, is_pt_correlated = False):
     h1tmp = h1.Clone("h1tmp");
     h1rebin = h1tmp.Rebin(len(arrX)-1,"h1rebin",arrX);
     h1rebin.SetName("{0}_rebin".format(h1.GetName()));
-    h1rebin.Sumw2();
+    #h1rebin.Sumw2();
 
     if is_pt_correlated:
         for i in range(0,h1rebin.GetNbinsX()):
