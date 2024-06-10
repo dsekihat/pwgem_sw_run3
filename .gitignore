@@ -5,6 +5,4 @@
 *.d
 *.so
 *.pcm
-slide*/
-__pycache__/*
-
+__pycache__/
