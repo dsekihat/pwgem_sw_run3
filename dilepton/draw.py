@@ -583,7 +583,7 @@ def draw_mee_multiple(filename, tasknames, ptmin, ptmax, dcamin, dcamax, suffix=
     rootfile.Close();
 
 #__________________________________________________________
-def draw_ptee_upc(filename, taskname, mmin, mmax, dcamin, dcamax, suffix=""):
+def draw_ptee_upc(filename, taskname, cen1, cen2, mmin, mmax, dcamin, dcamax, suffix=""):
     rootfile = TFile(filename, "READ");
     rootdire = rootfile.Get(taskname);
     hs_sig = rootdire.Get("hs_sig");
@@ -634,7 +634,7 @@ def draw_ptee_upc(filename, taskname, mmin, mmax, dcamin, dcamax, suffix=""):
     txt.SetTextFont(42);#helvetica
     txt.SetTextSize(0.035);
     txt.AddText("ALICE WIP");
-    txt.AddText("50#minus90 Pb#minusPb at #sqrt{#it{s}_{NN}} = 5.36 TeV");
+    txt.AddText("{0}#minus{1}% Pb#minusPb at #sqrt{{#it{{s}}_{{NN}}}} = 5.36 TeV".format(cen1, cen2));
     txt.AddText("#it{p}_{T,e} > 0.4 GeV/#it{c}, |#it{#eta}_{e}| < 0.8");
     txt.AddText("|#it{y}_{ee}| < 0.8");
     txt.AddText("{0:3.2f} < #it{{m}}_{{ee}} < {1:3.2f} GeV/#it{{c}}^{{2}}".format(mmin, mmax));
@@ -662,48 +662,48 @@ if __name__ == "__main__":
     dcamin = 0;
     dcamax = 10;
     suffix = "_pp_13.6TeV_LHC22o_pass6";
-    #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
-    #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
-    #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
+    draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
+    draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
+    draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
 
-    #draw_mee_sbratio(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
-    #draw_mee_sbratio(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
-    #draw_mee_sbratio(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
+    draw_mee_sbratio(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
+    draw_mee_sbratio(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
+    draw_mee_sbratio(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
 
-    #draw_mee_significance(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
-    #draw_mee_significance(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
-    #draw_mee_significance(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
-    tasknames = [
-        "dielectron-qc"
-        ,"dielectron-qc_itsibany"
-        ,"dielectron-qc_newsel8"
-    ];
+    draw_mee_significance(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
+    draw_mee_significance(filename, taskname, 0.0, 10.0, 0.0,  0.5, suffix);
+    draw_mee_significance(filename, taskname, 0.0, 10.0, 2.0, 10.0, suffix);
+
+    #tasknames = [
+    #    "dielectron-qc"
+    #    ,"dielectron-qc_itsibany"
+    #    ,"dielectron-qc_newsel8"
+    #];
     #draw_mee_sbratio_multiple(filename, tasknames, 0.0, 10.0, 0.0, 10.0, suffix);
     #draw_mee_significance_multiple(filename, tasknames, 0.0, 10.0, 0.0, 10.0, suffix);
     #draw_mee_multiple(filename, tasknames, 0.0, 10.0, 0.0, 10.0, suffix);
 
 
-    # for peripheral PbPb
-    filename = "mee_ptee_dcaee_PbPb_5.36TeV_LHC23zzh_pass3_5070.root";
-    taskname = "dielectron-qc_5070_TOFreq";
-    suffix = "_PbPb_5.36TeV_LHC23zzh_pass3_5070_TOFreq";
+    ## for peripheral PbPb
+    #filename = "mee_ptee_dcaee_PbPb_5.36TeV_LHC23zzh_pass3_5070.root";
+    #taskname = "dielectron-qc_5070_TOFreq_newsel8";
+    #suffix = "_PbPb_5.36TeV_LHC23zzh_pass3_5070_TOFreq_newsel8";
     #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
     #draw_mee_uls_ls(filename, taskname, 0.0, 0.1, 0.0, 10.0, suffix);
-    draw_ptee_upc(filename, taskname, 1.1, 2.5, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 50, 70, 1.1, 2.5, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 50, 70, 1.1, 2.5, 0.0,  0.5, suffix);
+    #draw_ptee_upc(filename, taskname, 50, 70, 2.7, 3.2, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 50, 70, 2.7, 3.2, 0.0,  0.5, suffix);
 
-    filename = "mee_ptee_dcaee_PbPb_5.36TeV_LHC23zzh_pass3_7090.root";
-    taskname = "dielectron-qc_7090_TOFreq";
-    suffix = "_PbPb_5.36TeV_LHC23zzh_pass3_7090_TOFreq";
+    #filename = "mee_ptee_dcaee_PbPb_5.36TeV_LHC23zzh_pass3_7090.root";
+    #taskname = "dielectron-qc_7090_TOFreq_newsel8";
+    #suffix = "_PbPb_5.36TeV_LHC23zzh_pass3_7090_TOFreq_newsel8";
     #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
     #draw_mee_uls_ls(filename, taskname, 0.0, 0.1, 0.0, 10.0, suffix);
-    draw_ptee_upc(filename, taskname, 1.1, 2.5, 0.0, 10.0, suffix);
-
-    filename = "mee_ptee_dcaee_PbPb_5.36TeV_LHC23zzh_pass3_5090.root";
-    taskname = "dielectron-qc_5090_TOFreq";
-    suffix = "_PbPb_5.36TeV_LHC23zzh_pass3_5090_TOFreq";
-    #draw_mee_uls_ls(filename, taskname, 0.0, 10.0, 0.0, 10.0, suffix);
-    #draw_mee_uls_ls(filename, taskname, 0.0, 0.1, 0.0, 10.0, suffix);
-    draw_ptee_upc(filename, taskname, 1.1, 2.5, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 70, 90, 1.1, 2.5, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 70, 90, 1.1, 2.5, 0.0,  0.5, suffix);
+    #draw_ptee_upc(filename, taskname, 70, 90, 2.7, 3.2, 0.0, 10.0, suffix);
+    #draw_ptee_upc(filename, taskname, 70, 90, 2.7, 3.2, 0.0,  0.5, suffix);
 
 
 #__________________________________________________________

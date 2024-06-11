@@ -19,14 +19,10 @@ data:
     - "dielectron-qc"
     - "dielectron-qc_dca1cm"
     - "dielectron-qc_itsibany"
-    - "dielectron-qc_itsibany_wophiv"
     - "dielectron-qc_newsel8"
-    - "dielectron-qc_wophiv"
 mc:
     tasknames:
     - "dielectron-qc-mc"
     - "dielectron-qc-mc_dca1cm"
     - "dielectron-qc-mc_itsibany"
-    - "dielectron-qc-mc_itsibany_wophiv"
     - "dielectron-qc-mc_newsel8"
-    - "dielectron-qc-mc_wophiv"
