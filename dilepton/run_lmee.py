@@ -138,9 +138,9 @@ def run_mee_ptee_dcaee(filename, tasknames, arr_mee, arr_ptee, arr_dcaee):
             hs_lspp_mix .GetAxis(2).SetRange(bin_dca1, bin_dca2);
             hs_lsmm_mix .GetAxis(2).SetRange(bin_dca1, bin_dca2);
 
-            h2R = TH2F("h2R_dca{0}".format(idca), "R factor in {0:2.1f} < DCA_{{ee}}^{{3D}} < {1:2.1f} #sigma;#it{{m}}_{{ee}} (GeV/#it{{c}}^{{2}});#it{{p}}_{{T,ee}} (GeV/#it{{c}})".format(dca_min, dca_max) , len(arr_mee)-1, arr_mee, len(arr_ptee)-1, arr_ptee);
-            h2R.Sumw2();
-            h2R.SetContour(100);
+            #h2R = TH2F("h2R_dca{0}".format(idca), "R factor in {0:2.1f} < DCA_{{ee}}^{{3D}} < {1:2.1f} #sigma;#it{{m}}_{{ee}} (GeV/#it{{c}}^{{2}});#it{{p}}_{{T,ee}} (GeV/#it{{c}})".format(dca_min, dca_max) , len(arr_mee)-1, arr_mee, len(arr_ptee)-1, arr_ptee);
+            #h2R.Sumw2();
+            #h2R.SetContour(100);
 
             for ipt in range(0, len(arr_ptee)-1):
                 pt_min = arr_ptee[ipt];
@@ -245,8 +245,8 @@ def run_mee_ptee_dcaee(filename, tasknames, arr_mee, arr_ptee, arr_dcaee):
                     hs_bkg.SetBinError(global_bin_id, h1bkg.GetBinError(im+1));
                     hs_sig.SetBinContent(global_bin_id, h1sig.GetBinContent(im+1));
                     hs_sig.SetBinError(global_bin_id, h1sig.GetBinError(im+1));
-                    h2R.SetBinContent(im+1, ipt+1, h1R.GetBinContent(im+1));
-                    h2R.SetBinError(im+1, ipt+1, h1R.GetBinError(im+1));
+                    #h2R.SetBinContent(im+1, ipt+1, h1R.GetBinContent(im+1));
+                    #h2R.SetBinError(im+1, ipt+1, h1R.GetBinError(im+1));
             #outdir.WriteTObject(h2R);
         hs_uls.Scale(1/nev);
         hs_bkg.Scale(1/nev);
