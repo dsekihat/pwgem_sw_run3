@@ -1,0 +1,62 @@
+period_data : "LHC23zzh"
+period_mc : "LHC24d2b"
+pass_number : "pass4"
+common:
+    system : "PbPb"
+    energy : 5.36 #center-of-mass energy in TeV
+    do_mll_ptll_dcall: True
+    do_flow: False
+    do_polarization: False
+    #mll_bin: [0, 0.04, 0.14, 1.1, 2.7, 3.2, 4] # in GeV main for flow
+    #mll_bin: [0, 0.04, 0.14, 0.5, 1.1, 2.0, 2.7, 3.2, 4] # in GeV main2 for flow
+    mll_bin: [0, 0.02, 0.04, 0.06, 0.08, 0.10, 0.14, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.5, 2.0, 2.4, 2.7, 2.8, 2.9, 3.00, 3.10, 3.2, 3.5, 4.0] # in GeV
+    #mll_bin: [0, 0.02, 0.04, 0.06, 0.08, 0.10, 0.14, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.5, 2, 2.4, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 4] # in GeV
+    #mll_bin: [0, 0.04, 0.14, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.5, 2, 2.4, 2.7, 3.0, 3.2, 4] # in GeV
+    #mll_bin: [0,0.02,0.04,0.06,0.08,0.1, 0.14, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.4, 1.5, 1.6, 1.8, 2, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.95, 3, 3.05, 3.1, 3.2, 3.5, 4] # in GeV
+    #mll_bin: [0, 0.14, 0.5, 1.1, 2.7, 3.2, 4.0] # in GeV
+    #mll_bin: [0, 0.14, 0.3, 0.5, 0.8, 1.1, 1.5, 2.0, 2.7, 3.2, 4.0] # in GeV
+    #mll_bin: [0,0.02,0.04,0.06,0.08,0.1,0.14,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.75,2.8,2.85,2.9,2.95,3,3.05,3.1,3.15,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4] # in GeV
+    #mll_bin: [0, 0.14, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.00, 3.10, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0] # in GeV
+    #mll_bin: [0, 0.14, 0.3, 0.5, 0.8, 1.1, 1.5, 2.0, 2.4, 2.8, 3.0, 3.2, 4.0] # in GeV
+    #mll_bin: [0, 0.14, 0.3, 0.5, 0.8, 1.1, 1.5, 2.0, 2.4, 2.8, 3.2, 4.0] # in GeV
+    #ptll_bin: [0.0, 2, 10] #in GeV
+    #ptll_bin: [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 1.] #in GeV
+    #ptll_bin: [0, 1., 2, 3, 4, 6, 10] #in GeV main
+    ptll_bin: [0, 0.5, 1., 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 8, 10] #in GeV main
+    #ptll_bin: [0, 10] #in GeV
+    #ptll_bin: [0, 1, 10] #in GeV
+    #dcall_bin: [0.0, 10] #in sigma
+    #dcall_bin: [0, 1, 2, 4, 6, 10, 20] #in sigma main
+    dcall_bin: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20] #in sigma
+    #dcall_bin: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6,0.7,0.8,0.9,1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 3, 4, 5, 6, 8, 10, 15, 20] #in sigma
+data:
+    tasks:
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt400_deta010", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt400_deta005", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt200", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt400", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TOFreq_minpt400", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt800", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TOFreq_minpt800", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_1050_TPChadrejorTOFreq_minpt400", cent_min: 10, cent_max: 50}
+        - {name: "dielectron_v2_1050_TOFreq_minpt400", cent_min: 10, cent_max: 50}
+        - {name: "dielectron_v2_1050_TPChadrejorTOFreq_minpt800", cent_min: 10, cent_max: 50}
+        - {name: "dielectron_v2_1050_TOFreq_minpt800", cent_min: 10, cent_max: 50}
+        - {name: "dielectron_v2_1060_TPChadrejorTOFreq_minpt400", cent_min: 10, cent_max: 60}
+        - {name: "dielectron_v2_1060_TOFreq_minpt400", cent_min: 10, cent_max: 60}
+        - {name: "dielectron_v2_1060_TPChadrejorTOFreq_minpt800", cent_min: 10, cent_max: 60}
+        - {name: "dielectron_v2_1060_TOFreq_minpt800", cent_min: 10, cent_max: 60}
+        - {name: "dielectron_v2_2060_TPChadrejorTOFreq_minpt400", cent_min: 20, cent_max: 60}
+        - {name: "dielectron_v2_2060_TOFreq_minpt400", cent_min: 20, cent_max: 60}
+        - {name: "dielectron_v2_2060_TPChadrejorTOFreq_minpt800", cent_min: 20, cent_max: 60}
+        - {name: "dielectron_v2_2060_TOFreq_minpt800", cent_min: 20, cent_max: 60}
+        - {name: "dielectron_v2_2040_TPChadrejorTOFreq_minpt400", cent_min: 20, cent_max: 40}
+        - {name: "dielectron_v2_2040_TOFreq_minpt400", cent_min: 20, cent_max: 40}
+        - {name: "dielectron_v2_2040_TPChadrejorTOFreq_minpt800", cent_min: 20, cent_max: 40}
+        - {name: "dielectron_v2_2040_TOFreq_minpt800", cent_min: 20, cent_max: 40}
+
+        - {name: "dimuon_v2_standalone_3050_minpt400", cent_min: 30, cent_max: 50}
+        - {name: "dimuon_v2_standalone_3050_minpt800", cent_min: 30, cent_max: 50}
+mc:
+    tasknames:
+        - "dielectron-qc-mc_3050"

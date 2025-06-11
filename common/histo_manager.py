@@ -75,6 +75,11 @@ def rebin_histogram(h1, arrX, isdiff, is_pt_correlated = False):
         h1rebin.Scale(1.,"width");
     return h1rebin;
 #______________________________________________________________________
+def rebin_profile(h1, arr):
+    h1tmp = h1.Clone("h1tmp");
+    h1rebin = h1tmp.Rebin(len(arr)-1, "h1rebin", arr);
+    return h1rebin;
+#______________________________________________________________________
 def slice_histogram(h2,x0,x1,axis,isdiff):
     h1 = 0;
     delta = 1e-6;
@@ -118,4 +123,26 @@ def get_ratio(h1sig, h1bkg, option="B"):
     h1r.Reset();
     h1r.Divide(h1sig,h1bkg,1.,1., option);
     return h1r;
+#______________________________________________________________________
+def get_cumulative_histogram(h1org, isdiff, is_x_correlated = False):
+    h1 = h1org.Clone("h1");
+    h1.Reset();
+    h1.Sumw2();
+    n_integral = 0;
+    n_integral_err = 0;
+    for i in range(1, h1org.GetNbinsX() + 1):
+        width = h1org.GetBinWidth(i);
+        n = h1org.GetBinContent(i);
+        n_err = h1org.GetBinError(i);
+        if isdiff:
+            n_integral += n * width;
+            n_integral_err += math.pow(n_err * width, 2);
+            h1.SetBinContent(i, n_integral);
+            h1.SetBinError(i, math.sqrt(n_integral_err));
+        else:
+            n_integral += n;
+            n_integral_err += math.pow(n_err, 2);
+            h1.SetBinContent(i, n_integral);
+            h1.SetBinError(i, n_integral_err);
+    return h1;
 #______________________________________________________________________

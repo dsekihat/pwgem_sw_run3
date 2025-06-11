@@ -1,0 +1,33 @@
+period_data : "LHC23_Thin"
+period_mc : "LHC23k4g"
+pass_number : "pass4"
+common:
+    system : "pp"
+    energy : 13.6 #center-of-mass energy in TeV
+    do_mll_ptll: False
+    do_mll_ptll_dcall: True
+    do_flow: False
+    mll_bin: [0.2, 0.21, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56, 0.58, 0.6, 0.62, 0.64, 0.66, 0.68, 0.7, 0.72, 0.74, 0.76, 0.78, 0.8,
+    0.82, 0.84, 0.86, 0.88, 0.9, 0.92, 0.94, 0.96, 0.98, 1.0, 1.02, 1.04, 1.06, 1.08, 1.1,
+    1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.75,
+    2.8, 2.85, 2.9, 2.95, 3.00, 3.05, 3.10, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95, 4.0,
+    4.5, 5, 5.5, 6, 6.5, 7,7.5,
+    8, 8.2, 8.4, 8.6, 8.8, 9, 9.2, 9.4, 9.6, 9.8, 10, 10.2, 10.4, 10.6, 10.8, 11, 11.5, 12
+    ] # in GeV
+    ptll_bin: [0.0, 0.2, 0.4, 0.6, 0.8, 1, 2,3,4,5,6,7,8,9,10] #in GeV
+    dcall_bin: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10] #in sigma
+data:
+    tasks:
+        - {name: "dimuon_standalone", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_global", cent_min: 0, cent_max: 999}
+        - {name: "dimuon", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_global_tight_minpt300", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_global_tight_minpt400", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_standalone_wWeighting", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_global_wWeighting", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_standalone_woTTCA", cent_min: 0, cent_max: 999}
+        - {name: "dimuon_global_woTTCA", cent_min: 0, cent_max: 999}
+mc:
+    tasknames:
+    - "dielectron-qc-mc"
+    - "dielectron-qc-mc_dca1cm"

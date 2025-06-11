@@ -1,0 +1,183 @@
+period_data : "LHC23zzh"
+period_mc : "LHC24d2b"
+pass_number : "pass4"
+common:
+    system : "PbPb"
+    energy : 5.36 #center-of-mass energy in TeV
+    do_mll_ptll_dcall: True
+    do_flow: False
+    do_polarization: False
+    #mll_bin: [0, 0.04, 0.10, 0.14, 0.2, 0.3] # in GeV
+    #mll_bin: [0, 0.01, 0.02, 0.03, 0.04, 0.06, 0.08, 0.10, 0.14, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.7, 2.8, 2.9, 2.95, 3.00, 3.05, 3.10, 3.2, 3.5, 4.0] # in GeV
+    #mll_bin: [0, 0.04, 0.10, 0.14, 0.3, 0.5, 1.1, 2.0, 2.7, 3.2, 4.0] # in GeV
+    #mll_bin: [0, 0.14, 0.5, 0.8, 1.1, 2.7, 3.2, 4] # in GeV
+    #mll_bin: [0, 0.01, 0.04, 0.10, 0.14, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.5, 2.0, 2.5, 2.7, 2.8, 2.9, 3.00, 3.10, 3.2, 3.5, 4.0] # in GeV
+    mll_bin: [0, 0.01, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.7, 2.8, 2.9, 3.00, 3.10, 3.2, 3.5, 4.0] # in GeV
+    #mll_bin: [0, 0.01, 0.02, 0.04, 0.06, 0.08, 0.10, 0.14, 0.2, 0.3, 0.4, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.5, 2.0, 2.4, 2.7, 2.8, 2.9, 3.00, 3.10, 3.2, 3.5, 4.0] # in GeV
+    #ptll_bin: [0.0, 10] #in GeV
+    #ptll_bin: [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.2, 0.4, 0.6, 0.8, 1., 10] #in GeV
+    #ptll_bin: [0, 0.1, 1., 10] #in GeV
+    #ptll_bin: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 6, 8, 10] #in GeV
+    #ptll_bin: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10] #in GeV
+    ptll_bin: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.5, 2.0, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10] #in GeV
+    #ptll_bin: [0, 10] #in GeV
+    #dcall_bin: [0.0, 10] #in sigma
+    dcall_bin: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20] #in sigma
+    #dcall_bin: [0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20] #in sigma
+    #dcall_bin: [0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 8, 10, 15, 20] #in sigma
+    #dcall_bin: [0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 8, 10, 15, 20] #in sigma
+data:
+    tasks:
+
+        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_id14815", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_id18525", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_id14815", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_id18525", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_id14815", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_id18525", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_id14815", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_id18525", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_id14815", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_id18525", cent_min: 70, cent_max: 90}
+
+        - {name: "dielectron_0010_TOFreq_minpt400", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_1030_TOFreq_minpt400", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_3050_TOFreq_minpt400", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_5070_TOFreq_minpt400", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090_TOFreq_minpt400", cent_min: 70, cent_max: 90}
+
+        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_wopf_detadphi", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_wopf_detadphi", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_wopf_detadphi", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_wopf_detadphi", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_wopf_detadphi", cent_min: 70, cent_max: 90}
+
+        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400_wpf_onlyLS", cent_min: 10, cent_max: 90}
+
+#        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400", cent_min:  0, cent_max: 10}
+#        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400", cent_min: 10, cent_max: 30}
+#        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400", cent_min: 30, cent_max: 50}
+#        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400", cent_min: 50, cent_max: 70}
+#        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400", cent_min:  0, cent_max: 90}
+#        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400", cent_min: 10, cent_max: 90}
+
+#        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min:  0, cent_max: 10}
+#        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 10, cent_max: 30}
+#        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 30, cent_max: 50}
+#        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 50, cent_max: 70}
+#        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min:  0, cent_max: 90}
+#        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 10, cent_max: 90}
+
+#        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min:  0, cent_max: 10}
+#        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min: 10, cent_max: 30}
+#        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min: 30, cent_max: 50}
+#        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min: 50, cent_max: 70}
+#        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min:  0, cent_max: 90}
+#        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400_TightEvSel", cent_min: 10, cent_max: 90}
+
+#        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min:  0, cent_max: 10}
+#        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min: 10, cent_max: 30}
+#        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min: 30, cent_max: 50}
+#        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min: 50, cent_max: 70}
+#        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min:  0, cent_max: 90}
+#        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400_wo_detadphi_TightEvSel", cent_min: 10, cent_max: 90}
+
+
+
+
+        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt200", cent_min:  0, cent_max: 10}
+        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt200", cent_min: 10, cent_max: 30}
+        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt200", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt200", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt200", cent_min: 70, cent_max: 90}
+
+
+
+        - {name: "dielectron_0090_TPChadrejorTOFreq_minpt400_id14815", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_1090_TPChadrejorTOFreq_minpt400_id14815", cent_min: 70, cent_max: 90}
+
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt400_deta010", cent_min: 30, cent_max: 50}
+        - {name: "dielectron_v2_3050_TPChadrejorTOFreq_minpt400_deta005", cent_min: 30, cent_max: 50}
+
+#        - {name: "dielectron_0010_TPChadrejorTOFreq_minpt200", cent_min:  0, cent_max: 10}
+#        - {name: "dielectron_1030_TPChadrejorTOFreq_minpt200", cent_min: 10, cent_max: 30}
+#        - {name: "dielectron_3050_TPChadrejorTOFreq_minpt200", cent_min: 30, cent_max: 50}
+#        - {name: "dielectron_5070_TPChadrejorTOFreq_minpt200", cent_min: 50, cent_max: 70}
+#        - {name: "dielectron_7090_TPChadrejorTOFreq_minpt200", cent_min: 70, cent_max: 90}
+
+
+        - {name: "dielectron_5070", cent_min: 50, cent_max: 70}
+        - {name: "dielectron_7090", cent_min: 70, cent_max: 90}
+        - {name: "dielectron_5090", cent_min: 50, cent_max: 90}
+
+#        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_chi2TOF1_reldiffPin02_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_chi2TOF1_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_minpt400_reldiffPin015", cent_min: 0, cent_max: 90}
+
+        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy10000_20000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy20000_30000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy30000_40000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy40000_50000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy50000_999999_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+
+        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy10000_20000_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy20000_30000_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy30000_40000_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy40000_50000_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy50000_999999_TPChadrejorTOFreq_minpt200", cent_min: 0, cent_max: 90}
+
+        - {name: "dielectron_occupancy0_10000_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy10000_20000_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy20000_30000_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy30000_40000_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy40000_50000_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy50000_999999_TPChadrejorTOFreq_minpt400_wophiv", cent_min: 0, cent_max: 90}
+
+
+        - {name: "dielectron_occupancy0_1000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy1000_2000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy2000_3000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy3000_4000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy4000_5000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+        - {name: "dielectron_occupancy5000_99999_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+
+
+#        - {name: "dielectron_occupancy0_1000_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy0_1000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy1000_2000_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy1000_2000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy2000_3000_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy2000_3000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy3000_4000_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy3000_4000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy4000_5000_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy4000_5000_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy5000_99999_TOFreq_minpt400", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy5000_99999_TPChadrejorTOFreq_minpt400", cent_min: 0, cent_max: 90}
+#
+#        - {name: "dielectron_occupancy0_1000_TOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy0_1000_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy1000_2000_TOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy1000_2000_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy2000_3000_TOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+#        - {name: "dielectron_occupancy2000_3000_TPChadrejorTOFreq_minpt400_wo_detadphi", cent_min: 0, cent_max: 90}
+
+mc:
+    tasknames:
+        - "dielectron-qc-mc_0010"
+        - "dielectron-qc-mc_1030"
+        - "dielectron-qc-mc_3050"
+        - "dielectron-qc-mc_5070"
+        - "dielectron-qc-mc_7090"
